@@ -31,3 +31,10 @@ jobs:
 
     - name: Clean and Build with Gradle
       run: ./gradlew clean build
+
+    # 上传构建工件
+    - name: Upload Plugin Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: julysafe-plugin
+        path: build/libs/*.jar # 修改为您的构建输出路径
